@@ -1,0 +1,8 @@
+body {
+    background-color:orange;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 190, 70);
+}

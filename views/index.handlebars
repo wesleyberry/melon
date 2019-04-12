@@ -1,0 +1,76 @@
+<div class="container">
+
+    <h2>Eat-da-Melon!</h2>
+    <div class="row">
+        {{!-- some image --}}
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h4>Melons to be eaten</h4>
+            <ul>
+                {{#each melons}}
+                    {{#unless devoured}}
+                    <h4>{{melon_name}}</h4>
+                        <button class="change-eaten" data-id="{{id}}" data-neweat="{{devoured}}">
+                            {{#if devoured}}Devour...{{else}}Devour!{{/if}}
+                        </button>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h4>Melons that have been eaten</h4>
+            <ul>
+                {{#each melons}}
+                    {{#if devoured}}
+                    <h4>{{melon_name}}</h4>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row formWB">
+        <form class="create-form">
+            <div class="form-group">
+                <textarea type="text" name="melon"></textarea>
+                <button type="submit" class="submit">Submit</button>
+            </div>
+        </form>
+        <p>Enter a melon you want to eat and click the "Submit" button</p>
+    </div>
+<script>
+$(function() {
+    $(".submit").on("click", function(event) {
+        event.preventDefault();
+        var newMelon = {
+            name: $("[name=melon]").val(),
+            devoured: "false"
+        };
+        $.ajax("api/melons", {
+            type: "POST",
+            data: newMelon
+        }).then(function() {
+            console.log("Created new melon...");
+            location.reload();
+        });
+    });
+
+    $(".change-eaten").on("click", function(event) {
+        var id = $(this).data("id");
+        var newEat = $(this).data("neweat");
+        var newEatState = {
+            devour: newEat
+        };
+        console.log(newEatState);
+        $.ajax("/api/melons/" + id, {
+            type: "PUT",
+            data: newEatState
+        }).then(function() {
+            location.reload();
+        })
+    })
+
+
+});
+</script>
+</div>
