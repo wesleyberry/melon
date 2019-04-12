@@ -1,6 +1,6 @@
 var express = require("express");
 var path = require("path");
-// var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -20,6 +20,6 @@ var routes = require("./controllers/melons_controller.js");
 
 app.use(routes);
 
-app.listen((process.env.PORT || 8080), function() {
+app.listen(PORT, function() {
   console.log("Server listening on: localhost:" + PORT);
 });
