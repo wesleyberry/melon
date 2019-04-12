@@ -10,6 +10,7 @@ router.get("*", function(req, res) {
             melons:data
         };
         console.log(hbsObject);
+        console.log("heroku tests");
         res.render("index", hbsObject);
     });
 });
