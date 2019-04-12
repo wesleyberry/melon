@@ -20,6 +20,6 @@ var routes = require("./controllers/melons_controller.js");
 
 app.use(routes);
 
-app.listen(process.env.PORT, function() {
-  console.log("Server listening on: localhost:" + process.env.PORT);
+app.listen(PORT, function() {
+  console.log("Server listening on: localhost:" + PORT);
 });
