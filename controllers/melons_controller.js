@@ -4,7 +4,7 @@ var router = express.Router();
 
 var melon = require("../models/melon.js");
 
-router.get("/", function(req, res) {
+router.get("*", function(req, res) {
     melon.selectAll(function(data) {
         var hbsObject = {
             melons:data
