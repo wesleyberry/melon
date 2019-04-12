@@ -1,10 +1,11 @@
 {
   "name": "melon",
   "version": "1.0.0",
-  "description": "",
+  "description": "Melon is a restaurant app that displays the functionality of server-side storage by means of routing, data parsing and databases. Melon utilizes, node.js, MySql, and Express.\r ## Why Melon is useful\r Melon is useful because it allows the users to store persistent data.\r ## How users can get started with Melon\r Users can visit the [deployed page](https://meloneater.herokuapp.com/) or visit the [repository location](https://github.com/wesleyberry/melon.git). Visit the [package.json](/package.json) to determine which packages are required to execute the program on your machine.\r ## Where users can get help with Melon\r Developer Wesley Berry's email: wesleyberry52@gmail.com",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
