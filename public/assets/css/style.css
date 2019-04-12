@@ -1,8 +1,14 @@
 body {
     background-color:orange;
 }
-.container {
+h2 {
+    text-align: center;
+}
+.formWB {
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 190, 70);
+}
+.row {
+    display: flex;
+    justify-content: center;
 }
